@@ -4,7 +4,7 @@
 
 ### 支持上面彩色，下面透明
 
-    app:alphaModel="top_to_alpha_bottom"
+app:alphaModel="top_to_alpha_bottom"
 
 <com.meikai.giftplayer.GiftVideoView
     android:id="@+id/gift_video_view"
