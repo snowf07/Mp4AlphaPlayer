@@ -7,6 +7,7 @@
 app:alphaModel="top_to_alpha_bottom"
 
 <com.meikai.giftplayer.GiftVideoView
+
     android:id="@+id/gift_video_view"
     
     android:layout_width="match_parent"
