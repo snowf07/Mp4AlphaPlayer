@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:text="开始播放" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+
+        <com.meikai.giftplayer.GiftVideoView
+            android:id="@+id/gift_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:alphaModel="top_to_alpha_bottom"
+            app:scaleType="fitXY"/>
+
+    </FrameLayout>
+
+</FrameLayout>
