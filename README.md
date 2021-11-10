@@ -16,14 +16,16 @@ app:alphaModel="top_to_alpha_bottom"
     
     app:alphaModel="top_to_alpha_bottom"
     
-    app:scaleType="fitXY"/>
+    app:scaleType="center_inside"/>
 
 
 ### 支持左边彩色，右边透明
 
 
-alphaModel改为    app:alphaModel="left_to_alpha_right"
+XML属性l改为   
 
+ app:alphaModel="left_to_alpha_right"
+ app:scaleType="center_crop"
 
 源视频文件，如下图所示:
 ![原始视频截图](原始视频的截图.jpg)
