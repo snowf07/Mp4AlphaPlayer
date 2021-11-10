@@ -25,6 +25,7 @@ app:alphaModel="top_to_alpha_bottom"
 XML属性l改为   
 
  app:alphaModel="left_to_alpha_right"
+ 
  app:scaleType="center_crop"
 
 源视频文件，如下图所示:
