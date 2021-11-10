@@ -22,7 +22,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.HashMap;
 
-public class GiftVideoView extends GLTextureView {
+public class  GiftVideoView extends GLTextureView {
 
     private static final String TAG = "AlphaMovieView";
 
@@ -82,6 +82,13 @@ public class GiftVideoView extends GLTextureView {
     public GiftVideoView(Context context, AttributeSet attrs,AlphaModel alphaModel) {
         super(context, attrs);
         this.alphaModel=alphaModel;
+        obtainRendererOptions(attrs);
+        init();
+    }
+    public GiftVideoView(Context context, AttributeSet attrs, AlphaModel alphaModel,int scaleType) {
+        super(context, attrs);
+        this.alphaModel=alphaModel;
+        this.mScaleType=scaleType;
         obtainRendererOptions(attrs);
         init();
     }
@@ -507,10 +514,10 @@ public class GiftVideoView extends GLTextureView {
 
     private void calculateVideoAspectRatio(int videoWidth, int videoHeight) {
         if (videoWidth > 0 && videoHeight > 0) {
-            videoAspectRatio = (float) videoWidth / 2 / videoHeight;
+            videoAspectRatio = (float) videoWidth / (videoHeight/2);
         }
-        mVideoWidth = videoWidth / 2;
-        mVideoHeight = videoHeight;
+        mVideoWidth = videoWidth;
+        mVideoHeight = videoHeight / 2;
         requestLayout();
         invalidate();
     }
@@ -521,9 +528,9 @@ public class GiftVideoView extends GLTextureView {
         int videoHeight = Integer.parseInt(retriever.extractMetadata(MediaMetadataRetriever
                 .METADATA_KEY_VIDEO_HEIGHT));
         logI("onDataSourceSet w " + videoWidth + "  h " + videoHeight);
-        if(alphaModel==AlphaModel.LEFT_TO_ALPHA_RIGHT){
-            calculateVideoAspectRatio(videoWidth, videoHeight);
-        }
+
+        calculateVideoAspectRatio(videoWidth, videoHeight);
+
         isDataSourceSet = true;
 
         if (isSurfaceCreated) {

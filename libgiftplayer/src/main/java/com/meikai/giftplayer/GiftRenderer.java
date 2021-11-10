@@ -57,12 +57,13 @@ public class GiftRenderer implements GLTextureView.Renderer, SurfaceTexture.OnFr
 
     //上面彩色，下面透明通道顶点
     private final float[] triangleVerticesData1 = {
-        // x , y, s , t
-            -1.0f, 0f, 0.0f, 0.0f,
-            1.0f, 0f, 1.0f, 0.0f,
-            -1.0f, -1.0f, 0.0f,1f,
-            1.0f, -1.0f, 1.0f, 1f,
+            // x , y, s , t
+            -1.0f, 1f, 0.0f, 0.0f,
+            1.0f, 1f, 1.0f, 0.0f,
+            -1.0f, -1f, 0.0f,0.5f,
+            1.0f, -1f, 1.0f, 0.5f,
     };
+
 
 
 
@@ -159,7 +160,7 @@ private final String vertexShader = "attribute vec2 a_position;\n"
 //        GLES20.glEnable(GL_POLYGON_SMOOTH_HINT);
 
         GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);
-        GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+        GLES20.glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
 
         GLES20.glUseProgram(program);
         checkGlError("glUseProgram");
