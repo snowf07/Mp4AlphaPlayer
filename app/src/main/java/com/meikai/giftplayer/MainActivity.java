@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         btnTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               // giftVideoView.setVideoFromSD("/data/user/0/com.meikai.giftplayer/mount_mp4/59.mp4");
                 giftVideoView.setVideoFromAssets("128014400.mp4");
+
             }
         });
 

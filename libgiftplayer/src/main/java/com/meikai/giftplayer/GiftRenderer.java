@@ -19,6 +19,7 @@ package com.meikai.giftplayer;
 import android.graphics.SurfaceTexture;
 import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
+import android.opengl.GLSurfaceView;
 import android.util.Log;
 import android.view.Surface;
 
@@ -103,7 +104,8 @@ private final String vertexShader = "attribute vec2 a_position;\n"
             + "varying vec2 v_texcoord;\n"
             + "uniform samplerExternalOES sTexture;\n"
             + "void main() {\n"
-            + "  gl_FragColor = vec4(texture2D(sTexture, v_texcoord + vec2(0,0)).rgb,texture2D(sTexture, v_texcoord+vec2(0,0.5)).r);\n"
+            + "  gl_FragColor = vec4(texture2D(sTexture, v_texcoord + vec2(0,0)).rgb" +
+            ",texture2D(sTexture, v_texcoord+vec2(0,0.5)).r);\n"
             + "}\n";
 
     /**
@@ -160,7 +162,7 @@ private final String vertexShader = "attribute vec2 a_position;\n"
 //        GLES20.glEnable(GL_POLYGON_SMOOTH_HINT);
 
         GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);
-        GLES20.glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
+        GLES20.glClearColor(0f, 0.0f, 0.0f, 0.0f);
 
         GLES20.glUseProgram(program);
         checkGlError("glUseProgram");
@@ -190,8 +192,13 @@ private final String vertexShader = "attribute vec2 a_position;\n"
 
     @Override
     public void onSurfaceDestroyed(GL10 gl) {
-        Log.i("render","onSurfaceDestroyed");
+
     }
+
+//    @Override
+//    public void onSurfaceDestroyed(GL10 gl) {
+//        Log.i("render","onSurfaceDestroyed");
+//    }
 
     @Override
     public void onSurfaceChanged(GL10 glUnused, int width, int height) {

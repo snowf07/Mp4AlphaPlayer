@@ -9,6 +9,7 @@ import android.media.MediaDataSource;
 import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.opengl.GLSurfaceView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -565,6 +566,28 @@ public class  GiftVideoView extends GLTextureView {
         public void run() {
             setVisibility(GONE);
         }
+    }
+
+
+    public static void logI(String log) {
+        Log.i(TAG, log);
+
+    }
+
+    public static void logE(String log) {
+        Log.e(TAG, log);
+    }
+
+    public static void logI(String tag, String log) {
+        Log.i(tag, log);
+    }
+
+    public static void logE(String tag, String log) {
+        Log.e(tag, log);
+    }
+
+    public static void postError(String error) {
+
     }
 
 }
